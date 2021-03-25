@@ -11,8 +11,9 @@ for (let key in circle) {
   //if (typeof circle[key] !=='function')
   console.log(key, circle[key]);
 }
-Object.keys(circle);
-//logs the values of radius and draw properties on console
+
+//console.log(key); logs the radius and draw properties without their values
+//console.log(key, circle[key]); logs the radius and draw properties on console with their values
 
 /* //primitives vs. objects/reference types
 //primitives are copied by their values, objects are copied by their reference.
