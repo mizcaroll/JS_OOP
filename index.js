@@ -1,4 +1,15 @@
-//Displaying the properties of an object in an array
+//to know if an object has a given property
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function() {
+    console.log('draw');
+  }
+}
+const circle = new Circle(10);
+if ('radius' in circle)
+console.log('Circle has a radius');
+
+/* //Displaying the properties of an object in an array
 function Circle(radius) {
   this.radius = radius;
   this.draw = function() {
@@ -9,7 +20,7 @@ const circle = new Circle(10);
 const keys = Object.keys(circle);
 console.log(keys);
 // displays (2) ["radius", "draw"] on the console 
-
+ */
 /* //enumerating properties
 function Circle(radius) {
   this.radius = radius;
