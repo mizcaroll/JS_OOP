@@ -1,12 +1,22 @@
+//primitives vs. objects/reference types
+//primitives are copied by their values, objects are copied by their reference.
+//exapmle of refence type
 
-//2. Constructor Function
+let obj = {value: 10};
+function increase(obj) {
+  obj.value++;
+}
+increase(obj);
+console.log(obj);
+
+/* //2. Constructor Function
 function Circle(radius) {
   this.radius = radius;
   this.draw = function() {
     console.log('draw');
   }
 }
-const another = new Circle(1);
+const another = new Circle(1); */
 
 /* //Ways to create an object
 
