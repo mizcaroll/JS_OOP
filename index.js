@@ -1,4 +1,20 @@
-//primitives vs. objects/reference types
+//enumerating properties
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function() {
+    console.log('draw');
+  }
+}
+const circle = new Circle(10);
+
+for (let key in circle) {
+  //if (typeof circle[key] !=='function')
+  console.log(key, circle[key]);
+}
+Object.keys(circle);
+//logs radius and draw properties on console
+
+/* //primitives vs. objects/reference types
 //primitives are copied by their values, objects are copied by their reference.
 //exapmle of refence type
 
@@ -9,7 +25,7 @@ function increase(obj) {
 increase(obj);
 console.log(obj);
 // will log 11 on the console
-//obj++ would log 10
+//obj++ would log 10 */
 
 /* //2. Constructor Function
 function Circle(radius) {
