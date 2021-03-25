@@ -8,6 +8,8 @@ function increase(obj) {
 }
 increase(obj);
 console.log(obj);
+// will log 11 on the console
+//obj++ would log 10
 
 /* //2. Constructor Function
 function Circle(radius) {
