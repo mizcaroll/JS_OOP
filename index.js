@@ -1,4 +1,29 @@
-//surface illustration of the concept of scope and closure for abstraction of the js public interface
+//using Object.defineProperty to define getters and/or setters
+function Circle(radius) {
+  this.radius = radius;
+  let defaultLocation = {x: 0, y: 0};
+  this.getDefaultLocation = function() {
+    return defaultLocation; //within closure
+  }
+
+  this.draw = function() {
+    console.log('draw');
+  };
+  //using defineProperty method
+  Object.defineProperty(this, 'defaultLocation', { get: function() {
+    return defaultLocation;
+  }, set: function(value) {
+    if (!value.x || !value.y)
+    throw new Error('Invalid location');
+    defaultLocation = value;
+  }
+});
+}
+const circle = new Circle(10);
+circle.defaultLocation = 1;
+circle.draw();
+
+/* //surface illustration of the concept of scope and closure for abstraction of the js public interface
 //a closure determines what variable will be accesible to an inner function 
 
 function Circle(radius) {
@@ -15,7 +40,7 @@ function Circle(radius) {
 }
 const circle = new Circle(10);
 circle.draw();
-//variables defaultLocation & computeOptimumLocation are within the SCOPE of the Circle funtion(parent funtion) and within the CLOSURE of the draw funtion(inner function)
+//variables defaultLocation & computeOptimumLocation are within the SCOPE of the Circle funtion(parent funtion) and within the CLOSURE of the draw funtion(inner function) */
 
 /* //to know if an object has a given property
 function Circle(radius) {
