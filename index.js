@@ -1,4 +1,16 @@
-//enumerating properties
+//Displaying the properties of an object in an array
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function() {
+    console.log('draw');
+  }
+}
+const circle = new Circle(10);
+const keys = Object.keys(circle);
+console.log(keys);
+// displays (2) ["radius", "draw"] on the console 
+
+/* //enumerating properties
 function Circle(radius) {
   this.radius = radius;
   this.draw = function() {
@@ -13,7 +25,7 @@ for (let key in circle) {
 }
 
 //console.log(key); logs the radius and draw properties without their values
-//console.log(key, circle[key]); logs the radius and draw properties on console with their values
+//console.log(key, circle[key]); logs the radius and draw properties on console with their values */
 
 /* //primitives vs. objects/reference types
 //primitives are copied by their values, objects are copied by their reference.
