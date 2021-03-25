@@ -1,4 +1,23 @@
-//to know if an object has a given property
+//surface illustration of the concept of scope and closure for abstraction of the js public interface
+//a closure determines what variable will be accesible to an inner function 
+
+function Circle(radius) {
+  this.radius = radius;
+  let defaultLocation = {x: 0, y: 0};
+
+  let computeOptimumLocation = function(factor) {
+    //..
+  }
+  this.draw = function() {
+    computeOptimumLocation(0.1); //closure able to call
+    console.log('draw');
+  };
+}
+const circle = new Circle(10);
+circle.draw();
+//variables defaultLocation & computeOptimumLocation are within the SCOPE of the Circle funtion(parent funtion) and within the CLOSURE of the draw funtion(inner function)
+
+/* //to know if an object has a given property
 function Circle(radius) {
   this.radius = radius;
   this.draw = function() {
@@ -7,7 +26,7 @@ function Circle(radius) {
 }
 const circle = new Circle(10);
 if ('radius' in circle)
-console.log('Circle has a radius');
+console.log('Circle has a radius'); */
 
 /* //Displaying the properties of an object in an array
 function Circle(radius) {
