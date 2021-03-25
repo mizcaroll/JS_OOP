@@ -1,5 +1,16 @@
 
-//Factory function
+//2. Constructor Function
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function() {
+    console.log('draw');
+  }
+}
+const another = new Circle(1);
+
+/* //Ways to create an object
+
+  //1. Factory function
 function createCircle(radius) {
   return {
     radius,
@@ -9,10 +20,9 @@ function createCircle(radius) {
   };
 }
 const circle = createCircle(1)
-circle.draw(); 
-/* 
+circle.draw(); */
 
-//object literal syntax
+/* //object literal syntax
  const circle = {
    radius: 1,
    location: {
