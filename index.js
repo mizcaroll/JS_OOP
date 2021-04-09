@@ -1,4 +1,28 @@
-//stopwatch exercise
+//codility demo challenge
+
+
+let sortedArr = [];
+
+function solution(A) {
+  let min = 1;
+  sortedArr = A.sort((a, b) => a - b);
+  uniqArr = [...new Set(sortedArr)];
+  //console.log(uniqArr);
+
+for (i = 0; i < uniqArr.length; i++) {
+ if ( uniqArr[i] > 0 && uniqArr[i] === min) {
+    min++;
+    //console.log(min);
+  } 
+ 
+}
+}
+const newArr = [1, 3, 6, 4, 1, 2];
+console.log(solution(newArr));
+console.log(uniqArr);
+
+
+/* //stopwatch exercise
 function Stopwatch() {
   let startTime, endTime, running, duration = 0;
 
@@ -26,7 +50,7 @@ function Stopwatch() {
   
   Object.defineProperty(this, 'duration', { get: function() { return duration; }
   });
-  }
+  } */
 //const sw = new Stopwatch()
 
 /* //using Object.defineProperty to define getters and/or setters
