@@ -2,28 +2,24 @@
 //Write a function: function solution(A); that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A. For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.  Given A = [1, 2, 3], the function should return 4. Given A = [−1, −3], the function should return 1. Write an efficient algorithm for the following assumptions: N is an integer within the range [1..100,000]; each element of array A is an integer within the range [−1,000,000..1,000,000].
 
 
-function solution(A) {
-  let min = 1;
-  let sortedArr = A.sort((a, b) => a - b); //sorts array A in ascending order.
-  let uniqArr = [...new Set(sortedArr)]; //removes duplicate elements from sorted array.
-
-for (i = 0; i < uniqArr.length; i++) {
- if ( uniqArr[i] > 0 && uniqArr[i] === min) {
-    min++;
-  } 
-}
-
+let min = 1;
+function solution(arr) {
+let sorted = arr.sort((a,b) => a - b) //sorts array to ascending order.
+let uniq = [...new Set(sorted)]; //removes duplicate elements from sorted array.
+for (let i = 0; i < uniq.length; i++) {
+  if ( uniq[i] === min) {
+     min++;
+   } 
+ }
 return min;
 }
-
 //test data
 const newArr = [1, 3, 6, 4, 1, 2];
 const arr2 = [1, 2, 3];
 const arr3 = [-1, -3];
 const arr4 = [1, 1, 2, 2, 4, 7];;
-console.log(solution(arr4)); //3 Success on all the above!! 
+console.log(solution(arr4)); //3 Success
 
-//NB: this is my first problem to solve in real life after learnig low-level javascript. Very fulfilling. Completely original solution. First time i saw it i didn't even know how to write a function. I managed to apply my knowledge of loops and arrays correctly with no errors. didn't even refer the loop syntax i just went with the logic in my head.. how bizarre. feels like i've learned a new language where i can 'speak' solutions into existence. this is such a milestone. Upwards and onwards!
 
 /* //stopwatch exercise
 function Stopwatch() {
